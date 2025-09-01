@@ -1,0 +1,39 @@
+{
+  "originUrl": "https://freight.qantas.com",
+  "aborted": false,
+  "urls": [
+    {
+      "url": "https://freight.qantas.com/au-en.html",
+      "source": "MANUAL",
+      "targetPath": "/au-en",
+      "id": "a7236ae8580cd23ba4a9366f70da3a1bac67bb9e"
+    },
+    {
+      "url": "https://freight.qantas.com/au-en/freight-planning/digital-capabilities.html",
+      "source": "MANUAL",
+      "targetPath": "/au-en/freight-planning/digital-capabilities",
+      "id": "6e0633aa003ea7c2fc1d8b4f8342997ca9c45ba8"
+    },
+    {
+      "url": "https://freight.qantas.com/au-en/freight-services/air-freight.html",
+      "source": "MANUAL",
+      "targetPath": "/au-en/freight-services/air-freight",
+      "id": "dbf207f7b26c281723dffb62646df496f5ad4574"
+    }
+  ],
+  "lastCrawled": null,
+  "crawlOptions": {
+    "timeout": 64800000,
+    "inclusionPatterns": [],
+    "exclusionPatterns": [],
+    "limit": 100,
+    "sameDomain": true,
+    "keepHash": false,
+    "strategy": "manual",
+    "strategiesAttempted": [
+      "MANUAL"
+    ]
+  },
+  "extractionErrors": [],
+  "errorCountMessage": "none"
+}
