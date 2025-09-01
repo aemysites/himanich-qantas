@@ -1,0 +1,32 @@
+{
+  "originUrl": "https://freight.qantas.com",
+  "aborted": false,
+  "lastCrawled": "https://freight.qantas.com/au-en.html",
+  "urls": [
+    {
+      "url": "https://freight.qantas.com/au-en.html",
+      "source": "CRAWL",
+      "targetPath": "/au-en",
+      "id": "a7236ae8580cd23ba4a9366f70da3a1bac67bb9e"
+    }
+  ],
+  "crawlOptions": {
+    "timeout": 64800000,
+    "inclusionPatterns": [
+      "/au-en.html",
+      "/au-en/**"
+    ],
+    "exclusionPatterns": [],
+    "limit": 100,
+    "sameDomain": true,
+    "keepHash": false,
+    "strategy": "crawl",
+    "logger": {},
+    "strategiesAttempted": [
+      "CRAWL"
+    ]
+  },
+  "extractionErrors": [],
+  "errorCountMessage": "none",
+  "error": null
+}
