@@ -1,0 +1,5 @@
+mountpoints:
+  /:
+    url: "https://author-p120505-e1748176.adobeaemcloud.com/bin/franklin.delivery/aemysites/himanich-qantas/main"
+    type: "markup"
+    suffix: ".html"
