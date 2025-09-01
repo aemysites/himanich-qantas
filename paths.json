@@ -1,10 +1,11 @@
 {
   "mappings": [
-    "/content/aem-boilerplate/:/",
-    "/content/aem-boilerplate/configuration:/.helix/config.json",
-    "/content/aem-boilerplate/metadata:/metadata.json"
+    "/content/himanich-qantas/:/",
+    "/content/himanich-qantas/configuration:/.helix/config.json",
+    "/content/himanich-qantas/metadata:/metadata.json",
+    "/content/himanich-qantas/tools/sidekick/library:/tools/sidekick/library.json"
   ],
   "includes": [
-    "/content/aem-boilerplate/"
+    "/content/himanich-qantas/"
   ]
 }
