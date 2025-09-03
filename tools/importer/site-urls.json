@@ -3,22 +3,10 @@
   "aborted": false,
   "urls": [
     {
-      "url": "https://freight.qantas.com/au-en.html",
+      "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "source": "MANUAL",
-      "targetPath": "/au-en",
-      "id": "a7236ae8580cd23ba4a9366f70da3a1bac67bb9e"
-    },
-    {
-      "url": "https://freight.qantas.com/au-en/freight-planning/digital-capabilities.html",
-      "source": "MANUAL",
-      "targetPath": "/au-en/freight-planning/digital-capabilities",
-      "id": "6e0633aa003ea7c2fc1d8b4f8342997ca9c45ba8"
-    },
-    {
-      "url": "https://freight.qantas.com/au-en/freight-services/air-freight.html",
-      "source": "MANUAL",
-      "targetPath": "/au-en/freight-services/air-freight",
-      "id": "dbf207f7b26c281723dffb62646df496f5ad4574"
+      "targetPath": "/au-en/fleet/freight-fleet",
+      "id": "fad9263d1164bb90c074371ecbce70ed6036a3bc"
     }
   ],
   "lastCrawled": null,
