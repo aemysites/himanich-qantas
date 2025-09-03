@@ -3,10 +3,10 @@
   "aborted": false,
   "urls": [
     {
-      "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
+      "url": "https://freight.qantas.com/au-en/freight-terminals.html",
       "source": "MANUAL",
-      "targetPath": "/au-en/fleet/freight-fleet",
-      "id": "fad9263d1164bb90c074371ecbce70ed6036a3bc"
+      "targetPath": "/au-en/freight-terminals",
+      "id": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e"
     }
   ],
   "lastCrawled": null,
