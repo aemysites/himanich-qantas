@@ -11,24 +11,13 @@
  */
 /* global WebImporter */
 /* eslint-disable no-console */
-import columns2Parser from './parsers/columns2.js';
-import columns6Parser from './parsers/columns6.js';
-import columns12Parser from './parsers/columns12.js';
-import columns3Parser from './parsers/columns3.js';
-import columns1Parser from './parsers/columns1.js';
-import hero11Parser from './parsers/hero11.js';
-import columns15Parser from './parsers/columns15.js';
-import hero16Parser from './parsers/hero16.js';
-import tabs10Parser from './parsers/tabs10.js';
-import cards14Parser from './parsers/cards14.js';
-import tabs7Parser from './parsers/tabs7.js';
-import hero19Parser from './parsers/hero19.js';
-import tabs13Parser from './parsers/tabs13.js';
-import tabs18Parser from './parsers/tabs18.js';
-import libraryMetadata17Parser from './parsers/libraryMetadata17.js';
-import tableStripedBordered9Parser from './parsers/tableStripedBordered9.js';
-import tableStripedBordered8Parser from './parsers/tableStripedBordered8.js';
-import tableStripedBordered4Parser from './parsers/tableStripedBordered4.js';
+import columns21Parser from './parsers/columns21.js';
+import columns27Parser from './parsers/columns27.js';
+import hero24Parser from './parsers/hero24.js';
+import columns23Parser from './parsers/columns23.js';
+import tabs25Parser from './parsers/tabs25.js';
+import cards22Parser from './parsers/cards22.js';
+import tableBordered20Parser from './parsers/tableBordered20.js';
 import headerParser from './parsers/header.js';
 import metadataParser from './parsers/metadata.js';
 import cleanupTransformer from './transformers/cleanup.js';
@@ -45,24 +34,13 @@ import {
 
 const parsers = {
   metadata: metadataParser,
-  columns2: columns2Parser,
-  columns6: columns6Parser,
-  columns12: columns12Parser,
-  columns3: columns3Parser,
-  columns1: columns1Parser,
-  hero11: hero11Parser,
-  columns15: columns15Parser,
-  hero16: hero16Parser,
-  tabs10: tabs10Parser,
-  cards14: cards14Parser,
-  tabs7: tabs7Parser,
-  hero19: hero19Parser,
-  tabs13: tabs13Parser,
-  tabs18: tabs18Parser,
-  libraryMetadata17: libraryMetadata17Parser,
-  tableStripedBordered9: tableStripedBordered9Parser,
-  tableStripedBordered8: tableStripedBordered8Parser,
-  tableStripedBordered4: tableStripedBordered4Parser,
+  columns21: columns21Parser,
+  columns27: columns27Parser,
+  hero24: hero24Parser,
+  columns23: columns23Parser,
+  tabs25: tabs25Parser,
+  cards22: cards22Parser,
+  tableBordered20: tableBordered20Parser,
   ...customParsers,
 };
 
