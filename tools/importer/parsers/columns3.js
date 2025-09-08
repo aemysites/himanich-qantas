@@ -1,62 +1,41 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
+  if (!element) return;
+
+  // Always use the block name for the header row
+  const headerRow = ['Columns block (columns3)'];
+
   // Find the row containing the columns
   const row = element.querySelector('.row');
   if (!row) return;
 
-  // Get all immediate child sections (the columns)
+  // Get all immediate section columns
   const sections = Array.from(row.querySelectorAll(':scope > section.footer__section'));
 
-  // Only keep sections that have meaningful content (not just empty headings)
-  const meaningfulSections = sections.filter((section) => {
-    // Check for non-empty heading or non-empty list
-    const h3 = section.querySelector('h3');
-    const ul = section.querySelector('ul');
-    const hasHeading = h3 && h3.textContent.trim();
-    const hasList = ul && ul.children.length > 0;
-    return hasHeading || hasList;
-  });
-
-  // For each meaningful section, collect its direct children (heading, list, etc)
-  const columnCells = meaningfulSections.map((section) => {
-    // Only include non-empty children
-    const children = Array.from(section.children).filter((child) => {
-      // Remove empty divs with empty h3
-      if (
-        child.tagName === 'DIV' &&
-        child.children.length === 1 &&
-        child.firstElementChild.tagName === 'H3' &&
-        !child.firstElementChild.textContent.trim()
-      ) {
-        return false;
+  // Only include sections that have actual content (heading or list)
+  const columns = sections
+    .map((section) => {
+      const children = [];
+      // Heading (if not empty)
+      const h3 = section.querySelector('div > h3');
+      if (h3 && h3.textContent.trim()) {
+        children.push(h3);
       }
-      // Remove divs with only empty h3
-      if (
-        child.tagName === 'DIV' &&
-        child.children.length === 1 &&
-        child.firstElementChild.tagName === 'H3'
-      ) {
-        return !!child.firstElementChild.textContent.trim();
+      // List (if present)
+      const ul = section.querySelector('ul');
+      if (ul) {
+        children.push(ul);
       }
-      // Remove empty ul
-      if (child.tagName === 'UL' && child.children.length === 0) {
-        return false;
-      }
-      return true;
-    });
-    if (children.length === 1) return children[0];
-    if (children.length === 0) return '';
-    return children;
-  });
+      return children.length ? children : null;
+    })
+    .filter((col) => col); // Remove empty columns
 
-  // Build the table rows
-  const headerRow = ['Columns (columns3)'];
-  const contentRow = columnCells;
-  const table = WebImporter.DOMUtils.createTable([
-    headerRow,
-    contentRow,
-  ], document);
+  // Table rows: header, then columns row
+  const cells = [headerRow, columns];
 
-  // Replace the original element
-  element.replaceWith(table);
+  // Create the block table
+  const block = WebImporter.DOMUtils.createTable(cells, document);
+
+  // Replace the original element with the block
+  element.replaceWith(block);
 }

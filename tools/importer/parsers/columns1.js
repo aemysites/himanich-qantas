@@ -1,27 +1,31 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  if (!element || !element.matches('ul.block-list')) return;
+  // Defensive: get all immediate children columns
+  const columns = Array.from(element.querySelectorAll(':scope > div'));
 
-  // Get all <li> children (columns)
-  const columns = Array.from(element.children).filter(li => li.matches('li'));
+  // There should be two columns
+  // First column: copyright text
+  // Second column: logos (each in its own div)
 
-  // Each cell should contain the content of the <li>, not the <li> itself
-  const contentRow = columns.map(li => {
-    // Use all child nodes of <li> (e.g., <a>)
-    const cell = document.createElement('div');
-    Array.from(li.childNodes).forEach(node => cell.appendChild(node.cloneNode(true)));
-    return cell;
-  });
+  // Column 1: copyright
+  const col1 = columns[0];
 
-  // Table header as per requirements
+  // Column 2: logos (two links)
+  const col2 = columns[1];
+
+  // Compose the cells for the second row
+  // Each cell should contain the full column content
+  const secondRow = [col1, col2];
+
+  // Table header
   const headerRow = ['Columns (columns1)'];
 
-  // Build the table
-  const table = WebImporter.DOMUtils.createTable([
-    headerRow,
-    contentRow,
-  ], document);
+  // Compose table data
+  const cells = [headerRow, secondRow];
 
-  // Replace the original element
-  element.replaceWith(table);
+  // Create the block table
+  const block = WebImporter.DOMUtils.createTable(cells, document);
+
+  // Replace the original element with the block
+  element.replaceWith(block);
 }

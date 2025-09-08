@@ -11,13 +11,17 @@
  */
 /* global WebImporter */
 /* eslint-disable no-console */
-import columns21Parser from './parsers/columns21.js';
-import columns27Parser from './parsers/columns27.js';
-import hero24Parser from './parsers/hero24.js';
-import columns23Parser from './parsers/columns23.js';
-import tabs25Parser from './parsers/tabs25.js';
-import cards22Parser from './parsers/cards22.js';
-import tableBordered20Parser from './parsers/tableBordered20.js';
+import columns1Parser from './parsers/columns1.js';
+import columns8Parser from './parsers/columns8.js';
+import hero9Parser from './parsers/hero9.js';
+import columns3Parser from './parsers/columns3.js';
+import hero11Parser from './parsers/hero11.js';
+import accordion4Parser from './parsers/accordion4.js';
+import cards5Parser from './parsers/cards5.js';
+import cards12Parser from './parsers/cards12.js';
+import cards2Parser from './parsers/cards2.js';
+import cards10Parser from './parsers/cards10.js';
+import tabs6Parser from './parsers/tabs6.js';
 import headerParser from './parsers/header.js';
 import metadataParser from './parsers/metadata.js';
 import cleanupTransformer from './transformers/cleanup.js';
@@ -34,23 +38,29 @@ import {
 
 const parsers = {
   metadata: metadataParser,
-  columns21: columns21Parser,
-  columns27: columns27Parser,
-  hero24: hero24Parser,
-  columns23: columns23Parser,
-  tabs25: tabs25Parser,
-  cards22: cards22Parser,
-  tableBordered20: tableBordered20Parser,
+  columns1: columns1Parser,
+  columns8: columns8Parser,
+  hero9: hero9Parser,
+  columns3: columns3Parser,
+  hero11: hero11Parser,
+  accordion4: accordion4Parser,
+  cards5: cards5Parser,
+  cards12: cards12Parser,
+  cards2: cards2Parser,
+  cards10: cards10Parser,
+  tabs6: tabs6Parser,
   ...customParsers,
 };
 
-const transformers = {
-  cleanup: cleanupTransformer,
-  images: imageTransformer,
-  links: linkTransformer,
-  sections: sectionsTransformer,
-  ...customTransformers,
-};
+const transformers = [
+  cleanupTransformer,
+  imageTransformer,
+  linkTransformer,
+  sectionsTransformer,
+  ...(Array.isArray(customTransformers)
+    ? customTransformers
+    : Object.values(customTransformers)),
+];
 
 // Additional page elements to parse that are not included in the inventory
 const pageElements = [{ name: 'metadata' }, ...customElements];
@@ -61,7 +71,7 @@ WebImporter.Import = {
   ),
   transform: (hookName, element, payload) => {
     // perform any additional transformations to the page
-    Object.values(transformers).forEach((transformerFn) => (
+    transformers.forEach((transformerFn) => (
       transformerFn.call(this, hookName, element, payload)
     ));
   },
