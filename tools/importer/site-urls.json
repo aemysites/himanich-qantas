@@ -9,7 +9,9 @@
       "id": "fad9263d1164bb90c074371ecbce70ed6036a3bc"
     },
     {
-      "url": "https://freight.qantas.com/au-en/freight-terminals.html"
+      "url": "https://freight.qantas.com/au-en/freight-terminals.html",
+      "id": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
+      "targetPath": "/au-en/freight-terminals"
     }
   ],
   "lastCrawled": null,
