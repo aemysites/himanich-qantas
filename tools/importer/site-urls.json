@@ -7,6 +7,12 @@
       "source": "MANUAL",
       "targetPath": "/au-en/fleet/freight-fleet",
       "id": "fad9263d1164bb90c074371ecbce70ed6036a3bc"
+    },
+    {
+      "url": " https://freight.qantas.com/au-en/freight-terminals.html",
+      "source": "MANUAL",
+      "targetPath": "/au-en/freight-terminal",
+      "id": "fad9263d1164bb90c074371ecbce70ed6036a3bc"
     }
   ],
   "lastCrawled": null,
