@@ -1,28 +1,6 @@
 {
   "fragments": [
     {
-      "name": "nav",
-      "path": "/nav",
-      "totalBoxes": 1,
-      "instances": [
-        {
-          "url": "https://freight.qantas.com/au-en/freight-terminals.html",
-          "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-          "uuid": "32e1fa98-00-e149a0de7cc2c213232eb1b183df2a2d797031a7",
-          "xpath": "/html[1]/body[1]/header[1]/div[1]/div[2]/dialog[1]"
-        },
-        {
-          "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
-          "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-00-e149a0de7cc2c213232eb1b183df2a2d797031a7",
-          "xpath": "/html[1]/body[1]/header[1]/div[1]/div[2]/dialog[1]"
-        }
-      ],
-      "styles": {
-        "height": 310
-      }
-    },
-    {
       "name": "footer",
       "path": "/footer",
       "totalBoxes": 1,
@@ -137,29 +115,6 @@
           "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
           "uuid": "32e1fa98-09-bc6e993c46d4ed4ef26a85ce6c13de801d14d440",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[2]/div[1]/div[1]/div[3]"
-        }
-      ]
-    },
-    {
-      "name": "Tabs",
-      "cluster": 6,
-      "source": "Tabs",
-      "target": "Tabs (tabs6)",
-      "key": "tabs6",
-      "instances": [
-        {
-          "url": "https://freight.qantas.com/au-en/freight-terminals.html",
-          "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-          "uuid": "32e1fa98-01-0ea0ae5ba1245dfb496167ef99f1633fc53b06ae",
-          "xpath": "/html[1]/body[1]/nav[1]",
-          "section": "section-1"
-        },
-        {
-          "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
-          "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-01-0ea0ae5ba1245dfb496167ef99f1633fc53b06ae",
-          "xpath": "/html[1]/body[1]/nav[1]",
-          "section": "section-1"
         }
       ]
     },
