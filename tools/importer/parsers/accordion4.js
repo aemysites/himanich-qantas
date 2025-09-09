@@ -2,47 +2,70 @@
 export default function parse(element, { document }) {
   if (!element || !element.classList.contains('frt_accordion')) return;
 
-  // Table header row as per example
-  const headerRow = ['Accordion'];
-  const rows = [headerRow];
+  // Header row: must be a single cell with 'Accordion'
+  const rows = [['Accordion']];
 
-  // Get all accordion items
   const items = element.querySelectorAll(':scope > li.accordion-item');
 
   items.forEach((item) => {
-    // Title cell: extract plain text only (no <h4> etc)
-    let titleText = '';
-    const labelEl = item.querySelector('.accordion-item__button-label');
-    if (labelEl) {
-      titleText = labelEl.textContent.trim();
-    } else {
-      // fallback: button text
-      const btn = item.querySelector('.accordion-item__button');
-      if (btn) {
-        titleText = btn.textContent.trim();
-      }
-    }
-
-    // Content cell: all children of .accordion-item__content
-    const contentEl = item.querySelector('.accordion-item__content');
-    let contentCell;
-    if (contentEl) {
-      const children = Array.from(contentEl.childNodes).filter((node) => {
-        return node.nodeType === 1 || (node.nodeType === 3 && node.textContent.trim());
-      });
-      if (children.length === 1) {
-        contentCell = children[0];
+    // Title cell: extract plain text only
+    let titleCell = '';
+    const headingDiv = item.querySelector('.accordion-item__heading');
+    if (headingDiv) {
+      const label = headingDiv.querySelector('.accordion-item__button-label');
+      if (label) {
+        titleCell = label.textContent.trim();
       } else {
-        contentCell = children;
+        const button = headingDiv.querySelector('button');
+        if (button) {
+          titleCell = button.textContent.trim();
+        }
       }
-    } else {
-      contentCell = document.createTextNode('');
     }
 
-    rows.push([titleText, contentCell]);
+    // Content cell: everything inside .accordion-item__content
+    let contentCell = '';
+    const contentDiv = item.querySelector('.accordion-item__content');
+    if (contentDiv) {
+      if (contentDiv.children.length > 1) {
+        contentCell = Array.from(contentDiv.children);
+      } else if (contentDiv.children.length === 1) {
+        contentCell = contentDiv.children[0];
+      } else {
+        contentCell = document.createTextNode(contentDiv.textContent.trim());
+      }
+    }
+
+    rows.push([titleCell, contentCell]);
   });
 
-  // Create the block table
-  const block = WebImporter.DOMUtils.createTable(rows, document);
-  element.replaceWith(block);
+  // Create the table with a single-cell header row (no colspan)
+  const table = document.createElement('table');
+  const thead = document.createElement('thead');
+  const headerTr = document.createElement('tr');
+  const headerTh = document.createElement('th');
+  headerTh.textContent = rows[0][0];
+  headerTr.appendChild(headerTh);
+  thead.appendChild(headerTr);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  for (let i = 1; i < rows.length; i++) {
+    const tr = document.createElement('tr');
+    rows[i].forEach((cell) => {
+      const td = document.createElement('td');
+      if (Array.isArray(cell)) {
+        cell.forEach((el) => td.appendChild(el));
+      } else if (cell instanceof Node) {
+        td.appendChild(cell);
+      } else {
+        td.textContent = cell;
+      }
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  }
+  table.appendChild(tbody);
+
+  element.replaceWith(table);
 }

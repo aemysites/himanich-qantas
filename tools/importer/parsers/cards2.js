@@ -1,38 +1,29 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  if (!element || !element.classList.contains('block-list')) return;
+  // Defensive: ensure element is a UL with LI children
+  if (!element || !element.querySelectorAll) return;
 
-  // Always use the correct header row
+  // Header row as per block guidelines
   const headerRow = ['Cards (cards2)'];
+  const rows = [headerRow];
 
-  // Get all <li> direct children
-  const items = Array.from(element.querySelectorAll(':scope > li'));
+  // Get all direct LI children
+  const items = Array.from(element.children).filter(child => child.tagName === 'LI');
 
-  // Build rows for each card
-  const rows = items.map((li) => {
+  items.forEach(li => {
+    // Find the link inside the LI
     const link = li.querySelector('a');
-    if (!link) return null;
+    if (!link) return; // skip if no link
 
-    // First cell: icon placeholder (since no image or icon in HTML, use a right arrow Unicode character)
-    const iconCell = document.createElement('span');
-    iconCell.textContent = '→';
+    // Always two columns: [image/icon cell, text cell]
+    // No image/icon in source, so first cell is empty string
+    // Second cell is the link (title and CTA)
+    rows.push(['', link]);
+  });
 
-    // Second cell: text content (title as heading, link as CTA)
-    const cardContent = document.createElement('div');
-    // Use all text content from the <li> (not just link.textContent)
-    // This ensures any additional text nodes are included
-    // But in this HTML, only the link is present, so we include its text and the link itself
-    const title = document.createElement('h3');
-    title.textContent = link.textContent.trim();
-    cardContent.appendChild(title);
-    // Add the link as CTA at the bottom
-    const cta = link.cloneNode(true);
-    cardContent.appendChild(cta);
+  // Create the block table
+  const table = WebImporter.DOMUtils.createTable(rows, document);
 
-    return [iconCell, cardContent];
-  }).filter(Boolean);
-
-  const tableData = [headerRow, ...rows];
-  const block = WebImporter.DOMUtils.createTable(tableData, document);
-  element.replaceWith(block);
+  // Replace the original element with the block table
+  element.replaceWith(table);
 }
