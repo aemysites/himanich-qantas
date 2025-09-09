@@ -1,75 +1,35 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Table header row
+  // Always use the correct header row (exactly one column)
   const headerRow = ['Cards (cards10)'];
   const rows = [headerRow];
 
-  // Find all immediate card columns
-  const columns = element.querySelectorAll(':scope .column');
+  // Find all columns in the row
+  const row = element.querySelector('.row');
+  const columns = row ? row.querySelectorAll(':scope > .column') : [];
 
   columns.forEach((col) => {
-    // --- IMAGE ---
-    let imgEl = null;
-    const picture = col.querySelector('picture');
-    if (picture) {
-      imgEl = picture.querySelector('img');
+    // First cell: image (mandatory)
+    const img = col.querySelector('.responsive-image img');
+    // Second cell: text content (mandatory)
+    const textContent = [];
+    // Title (the .links a)
+    const titleLink = col.querySelector('.links a');
+    if (titleLink) textContent.push(titleLink);
+    // Description (the .body-text, only if not empty)
+    const desc = col.querySelector('.body-text');
+    if (desc) {
+      const p = desc.querySelector('p');
+      if (!p || p.textContent.replace(/\s|\u00a0/g, '').length > 0) {
+        textContent.push(desc);
+      }
     }
-    if (!imgEl) {
-      imgEl = col.querySelector('img');
-    }
-
-    // --- TEXT CONTENT ---
-    // Find the card title (link text)
-    let titleText = '';
-    let titleHref = '';
-    const link = col.querySelector('.links a');
-    if (link) {
-      titleText = link.textContent.trim();
-      titleHref = link.getAttribute('href');
-    }
-
-    // Find description/body text (include all text from .body-text, even if whitespace)
-    let descText = '';
-    const bodyText = col.querySelector('.body-text');
-    if (bodyText) {
-      // Only get text if node exists and is not null
-      descText = (bodyText.innerText || '').replace(/\s+/g, ' ').trim();
-    }
-
-    // Compose the text cell
-    const textCellContent = [];
-    if (titleText) {
-      // Title as strong
-      const strong = document.createElement('strong');
-      strong.textContent = titleText;
-      textCellContent.push(strong);
-    }
-    if (descText) {
-      const p = document.createElement('p');
-      p.textContent = descText;
-      textCellContent.push(p);
-    }
-    // Always include CTA as link at the bottom
-    if (titleText && titleHref) {
-      const a = document.createElement('a');
-      a.href = titleHref;
-      a.textContent = titleText;
-      textCellContent.push(a);
-    }
-
-    // Defensive: if no text content, add a placeholder
-    if (textCellContent.length === 0 && titleText) {
-      textCellContent.push(document.createTextNode(titleText));
-    }
-
-    // Compose the row: [image, text content]
     rows.push([
-      imgEl,
-      textCellContent
+      img || '',
+      textContent.length ? textContent : ''
     ]);
   });
 
-  // Create the block table
-  const block = WebImporter.DOMUtils.createTable(rows, document);
-  element.replaceWith(block);
+  const table = WebImporter.DOMUtils.createTable(rows, document);
+  element.replaceWith(table);
 }

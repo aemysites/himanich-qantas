@@ -1,39 +1,44 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  if (!element) return;
-
-  // Always use the block name for the header row
-  const headerRow = ['Columns block (columns3)'];
-
   // Find the row containing the columns
   const row = element.querySelector('.row');
   if (!row) return;
 
-  // Get all immediate section columns
-  const sections = Array.from(row.querySelectorAll(':scope > section.footer__section'));
+  // Find all immediate section columns
+  let sections = Array.from(row.querySelectorAll(':scope > section.footer__section'));
 
-  // Only include sections that have actual content (heading or list)
-  const columns = sections
-    .map((section) => {
-      const children = [];
-      // Heading (if not empty)
-      const h3 = section.querySelector('div > h3');
-      if (h3 && h3.textContent.trim()) {
-        children.push(h3);
-      }
-      // List (if present)
-      const ul = section.querySelector('ul');
-      if (ul) {
-        children.push(ul);
-      }
-      return children.length ? children : null;
-    })
-    .filter((col) => col); // Remove empty columns
+  // Remove trailing empty columns (columns with no meaningful content)
+  while (sections.length > 0) {
+    const section = sections[sections.length - 1];
+    // Check if section is empty (no non-empty text, no links, no lists, no headings)
+    const hasContent = Array.from(section.querySelectorAll('a, li, h3, p')).some(el => el.textContent.trim().length > 0);
+    if (!hasContent) {
+      sections.pop();
+    } else {
+      break;
+    }
+  }
 
-  // Table rows: header, then columns row
-  const cells = [headerRow, columns];
+  // Header row: must match target block name exactly
+  const headerRow = ['Columns block (columns3)'];
 
-  // Create the block table
+  // Second row: each cell is the content of a column (section)
+  const contentRow = sections.map((section) => {
+    // Gather all children except empty text nodes
+    const children = Array.from(section.childNodes).filter(node => {
+      return !(node.nodeType === Node.TEXT_NODE && !node.textContent.trim());
+    });
+    // If empty, return an empty div
+    if (children.length === 0) {
+      const emptyDiv = document.createElement('div');
+      return emptyDiv;
+    }
+    // Return children as array (WebImporter will flatten)
+    return children;
+  });
+
+  // Build the table
+  const cells = [headerRow, contentRow];
   const block = WebImporter.DOMUtils.createTable(cells, document);
 
   // Replace the original element with the block

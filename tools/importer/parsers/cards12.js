@@ -1,50 +1,63 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Helper to extract the image element from a column
-  function getImageEl(column) {
-    // Find the first <img> in the column
-    return column.querySelector('img');
-  }
-
-  // Helper to extract the text/link content from a column
-  function getTextEl(column) {
-    // Find the first link in the .links parbase
-    const linksParbase = column.querySelector('.links.parbase');
-    if (linksParbase) {
-      // Use the entire .links.parbase as the text cell (includes the link)
-      return linksParbase;
-    }
-    // Fallback: just get the first <a>
-    const a = column.querySelector('a');
-    if (a) return a;
-    // Fallback: get all text
-    return document.createTextNode(column.textContent.trim());
-  }
-
-  // Get all columns (direct children of .row)
-  let row = element.querySelector('.row');
-  if (!row) {
-    // Defensive: maybe columns are direct children
-    row = element;
-  }
-  const columns = Array.from(row.querySelectorAll(':scope > .column'));
-
-  // Build table rows
+  // Table header as required
   const headerRow = ['Cards (cards12)'];
   const rows = [headerRow];
 
+  // Find all card columns
+  const columns = element.querySelectorAll(':scope > .row > .column');
+
   columns.forEach((col) => {
-    const img = getImageEl(col);
-    const text = getTextEl(col);
-    // Only add row if image and text exist
-    if (img && text) {
-      rows.push([img, text]);
+    // Find image (mandatory)
+    let imgEl = null;
+    const picture = col.querySelector('picture');
+    if (picture) {
+      imgEl = picture.querySelector('img');
     }
+
+    // Find text/link (mandatory)
+    let textCell = document.createElement('div');
+    // Get the link (title and CTA)
+    const link = col.querySelector('.links a');
+    if (link) {
+      // Use the link as the title (styled as heading)
+      const heading = document.createElement('strong');
+      heading.textContent = link.textContent;
+      textCell.appendChild(heading);
+      // Add a line break for spacing
+      textCell.appendChild(document.createElement('br'));
+      // Add the link as CTA at the bottom (clone to avoid moving original)
+      const cta = link.cloneNode(true);
+      textCell.appendChild(cta);
+    }
+    // Also include any other text content from the column (for flexibility)
+    // Get all text nodes in the column that are not inside .links
+    const linksDiv = col.querySelector('.links');
+    const walker = document.createTreeWalker(col, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(node) {
+        if (!linksDiv || !linksDiv.contains(node)) {
+          if (node.textContent.trim()) return NodeFilter.FILTER_ACCEPT;
+        }
+        return NodeFilter.FILTER_REJECT;
+      }
+    });
+    let textContent = '';
+    let node;
+    while ((node = walker.nextNode())) {
+      textContent += node.textContent.trim() + ' ';
+    }
+    if (textContent.trim()) {
+      const desc = document.createElement('div');
+      desc.textContent = textContent.trim();
+      textCell.insertBefore(desc, textCell.firstChild);
+    }
+
+    // Build the row: [image, text cell]
+    const row = [imgEl, textCell];
+    rows.push(row);
   });
 
   // Create the table block
   const table = WebImporter.DOMUtils.createTable(rows, document);
-
-  // Replace the original element
   element.replaceWith(table);
 }

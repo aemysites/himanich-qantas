@@ -1,53 +1,64 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Defensive: find the hero image (picture or img)
-  let heroImg = null;
-  const heroImageDiv = Array.from(element.querySelectorAll(':scope > div > div'))
-    .find(div => div.classList.contains('HeroImageAndIntro__heroImage'));
+  // Defensive: find the main container for hero content
+  const container = element;
+
+  // Header row for block table
+  const headerRow = ['Hero (hero11)'];
+
+  // --- Row 2: Image ---
+  // Find the hero image container
+  let imageCell = '';
+  const heroImageDiv = Array.from(container.querySelectorAll(':scope > div'))
+    .find(div => div.classList.contains('HeroImageAndIntro__container'));
   if (heroImageDiv) {
-    heroImg = heroImageDiv.querySelector('picture') || heroImageDiv.querySelector('img');
-  }
-
-  // Defensive: find the heading (h1)
-  let heading = null;
-  const headingDiv = Array.from(element.querySelectorAll(':scope > div > div'))
-    .find(div => div.classList.contains('HeroImageAndIntro__intro'));
-  if (headingDiv) {
-    const headingContainer = headingDiv.querySelector('.HeroImageAndIntro__intro-heading');
-    if (headingContainer) {
-      heading = headingContainer.querySelector('h1');
+    const imageDiv = Array.from(heroImageDiv.querySelectorAll(':scope > div'))
+      .find(div => div.classList.contains('HeroImageAndIntro__heroImage'));
+    if (imageDiv) {
+      // Find <img> inside <picture>
+      const img = imageDiv.querySelector('img');
+      if (img) {
+        imageCell = img;
+      }
     }
   }
 
-  // Defensive: find the description (paragraph)
-  let description = null;
-  if (headingDiv) {
-    const descContainer = headingDiv.querySelector('.HeroImageAndIntro__intro-description');
-    if (descContainer) {
-      description = descContainer.querySelector('p');
+  // --- Row 3: Text Content ---
+  let textCellContent = [];
+  if (heroImageDiv) {
+    const introDiv = Array.from(heroImageDiv.querySelectorAll(':scope > div'))
+      .find(div => div.classList.contains('HeroImageAndIntro__intro'));
+    if (introDiv) {
+      // Heading
+      const headingContainer = introDiv.querySelector('.HeroImageAndIntro__intro-heading');
+      if (headingContainer) {
+        const h1 = headingContainer.querySelector('h1');
+        if (h1) textCellContent.push(h1);
+      }
+      // Description (paragraph)
+      const descContainer = introDiv.querySelector('.HeroImageAndIntro__intro-description');
+      if (descContainer) {
+        const textDiv = descContainer.querySelector('.HeroImageAndIntro__text');
+        if (textDiv) {
+          const p = textDiv.querySelector('p');
+          if (p) textCellContent.push(p);
+        }
+      }
     }
   }
 
-  // Compose content row: heading and description
-  const contentRow = [];
-  const contentElements = [];
-  if (heading) contentElements.push(heading);
-  if (description) contentElements.push(description);
-  // If both heading and description exist, put both in the cell
-  // If only one exists, just use that
-  contentRow.push(contentElements);
+  // Defensive: ensure at least something is present
+  if (!imageCell) imageCell = '';
+  if (textCellContent.length === 0) textCellContent = [''];
 
-  // Compose image row
-  const imageRow = [heroImg ? heroImg : ''];
-
-  // Table rows: header, image, content
+  // Compose table rows
   const cells = [
-    ['Hero (hero11)'],
-    imageRow,
-    contentRow
+    headerRow,
+    [imageCell],
+    [textCellContent],
   ];
 
-  // Create block table
+  // Create block table and replace original element
   const block = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(block);
 }

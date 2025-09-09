@@ -1,75 +1,90 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
   // Helper to extract image from a column
-  function getImage(column) {
-    // Find the first <img> inside the column
-    const img = column.querySelector('img');
+  function getImage(col) {
+    const img = col.querySelector('img');
     return img || '';
   }
 
-  // Helper to extract text and CTA from a column
-  function getTextContent(column) {
-    const cellContent = [];
-    // Find the link in the .links parbase
-    const linksParbase = column.querySelector('.links.parbase');
-    if (linksParbase) {
-      const link = linksParbase.querySelector('a');
+  // Helper to extract card text and CTA from a column
+  function getTextContent(col) {
+    // Find the .links container
+    const linkContainer = col.querySelector('.links');
+    let title = null;
+    let cta = null;
+    let ctaHref = null;
+    if (linkContainer) {
+      // The first <a> is the CTA/title
+      const link = linkContainer.querySelector('a');
       if (link) {
-        // Title as <strong>
-        const strong = document.createElement('strong');
-        strong.textContent = link.textContent;
-        cellContent.push(strong);
+        // Create a heading for the card title
+        title = document.createElement('strong');
+        title.textContent = link.textContent;
+        cta = link.cloneNode(true);
+        ctaHref = cta.getAttribute('href');
       }
     }
-    // Try to extract description text if any (not just the link)
-    // Look for any text nodes or elements in .links.parbase except the <a>
-    if (linksParbase) {
-      // Get all child nodes except the <a> and <div style="clear:both">
-      Array.from(linksParbase.childNodes).forEach((node) => {
-        if (node.nodeType === Node.TEXT_NODE) {
-          const text = node.textContent.trim();
-          if (text) {
-            cellContent.push(document.createTextNode(text));
-          }
-        } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName !== 'A' && node.tagName !== 'DIV') {
-          cellContent.push(node.cloneNode(true));
+    // Compose cell content: title (strong), description (if any), and CTA (link)
+    const cellContent = document.createElement('div');
+    if (title) cellContent.appendChild(title);
+    // Try to find description text (text nodes or elements not in .links)
+    // Look for text nodes or elements in the column that are not part of .links or .responsive-image
+    Array.from(col.childNodes).forEach((node) => {
+      if (
+        node.nodeType === Node.TEXT_NODE && node.textContent.trim() &&
+        !node.parentElement?.classList?.contains('links') &&
+        !node.parentElement?.classList?.contains('responsive-image')
+      ) {
+        const p = document.createElement('p');
+        p.textContent = node.textContent.trim();
+        cellContent.appendChild(p);
+      } else if (
+        node.nodeType === Node.ELEMENT_NODE &&
+        !node.classList.contains('links') &&
+        !node.classList.contains('responsive-image')
+      ) {
+        // If it's an element and not .links or .responsive-image, include its text
+        const text = node.textContent.trim();
+        if (text) {
+          const p = document.createElement('p');
+          p.textContent = text;
+          cellContent.appendChild(p);
         }
-      });
-    }
-    // Add the CTA link at the end if present
-    if (linksParbase) {
-      const link = linksParbase.querySelector('a');
-      if (link) {
-        cellContent.push(document.createElement('br'));
-        cellContent.push(link.cloneNode(true));
       }
+    });
+    if (cta) {
+      cellContent.appendChild(document.createElement('br'));
+      cellContent.appendChild(cta);
     }
-    return cellContent.length ? cellContent : '';
+    return cellContent.childNodes.length ? cellContent : '';
   }
 
-  // Get all immediate child columns
-  const columns = Array.from(element.querySelectorAll(':scope > .row > .column'));
+  // Get all columns in the row
+  const row = element.querySelector('.row');
+  const columns = row ? row.querySelectorAll(':scope > .column') : [];
 
   // Build table rows
-  const rows = [];
+  const cells = [];
+  // Header row
   const headerRow = ['Cards (cards5)'];
-  rows.push(headerRow);
+  cells.push(headerRow);
 
-  columns.forEach((column) => {
+  // Each card is a row: [image, text content]
+  columns.forEach((col) => {
     // Defensive: skip empty columns
-    const img = getImage(column);
-    const textContent = getTextContent(column);
+    if (!col.textContent.trim()) return;
+    const img = getImage(col);
+    const textContent = getTextContent(col);
+    // Only add if there's at least image or text
     if (img || textContent) {
-      rows.push([
+      cells.push([
         img,
         textContent,
       ]);
     }
   });
 
-  // Create the block table
-  const block = WebImporter.DOMUtils.createTable(rows, document);
-
-  // Replace the original element
+  // Create and replace block table
+  const block = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(block);
 }

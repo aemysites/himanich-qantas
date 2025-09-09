@@ -1,31 +1,23 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Defensive: get all immediate children columns
-  const columns = Array.from(element.querySelectorAll(':scope > div'));
+  // Defensive: get all immediate child columns
+  const columns = Array.from(element.querySelectorAll(':scope > .column'));
 
-  // There should be two columns
-  // First column: copyright text
-  // Second column: logos (each in its own div)
+  // If columns not found, fallback to all direct children
+  const cells = columns.length > 0 ? columns : Array.from(element.children);
 
-  // Column 1: copyright
-  const col1 = columns[0];
-
-  // Column 2: logos (two links)
-  const col2 = columns[1];
-
-  // Compose the cells for the second row
-  // Each cell should contain the full column content
-  const secondRow = [col1, col2];
-
-  // Table header
+  // Table header row
   const headerRow = ['Columns (columns1)'];
 
-  // Compose table data
-  const cells = [headerRow, secondRow];
+  // Second row: each cell is a column's content
+  const contentRow = cells.map((col) => col);
 
-  // Create the block table
-  const block = WebImporter.DOMUtils.createTable(cells, document);
+  // Build table
+  const table = WebImporter.DOMUtils.createTable([
+    headerRow,
+    contentRow,
+  ], document);
 
-  // Replace the original element with the block
-  element.replaceWith(block);
+  // Replace original element
+  element.replaceWith(table);
 }
