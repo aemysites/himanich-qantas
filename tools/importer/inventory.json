@@ -31,13 +31,13 @@
         {
           "url": "https://freight.qantas.com/au-en/freight-terminals.html",
           "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-          "uuid": "32e1fa98-21-9e5264a09ab84dd854480c9bd403ce679794d665",
+          "uuid": "32e1fa98-14-9e5264a09ab84dd854480c9bd403ce679794d665",
           "xpath": "/html[1]/body[1]/div[7]"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-72-9e5264a09ab84dd854480c9bd403ce679794d665",
+          "uuid": "fad9263d-65-9e5264a09ab84dd854480c9bd403ce679794d665",
           "xpath": "/html[1]/body[1]/div[7]"
         }
       ],
@@ -46,323 +46,229 @@
   ],
   "blocks": [
     {
-      "name": "Columns",
+      "name": "Cards",
       "cluster": 1,
-      "source": "Columns",
-      "target": "Columns (columns1)",
-      "key": "columns1",
-      "instances": [
-        {
-          "url": "https://freight.qantas.com/au-en/freight-terminals.html",
-          "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-          "uuid": "32e1fa98-18-f1c233ce628833028936d9d616a3ceb52a37a0b6",
-          "xpath": "/html[1]/body[1]/div[4]/footer[1]/div[2]"
-        },
-        {
-          "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
-          "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-69-f1c233ce628833028936d9d616a3ceb52a37a0b6",
-          "xpath": "/html[1]/body[1]/div[4]/footer[1]/div[2]"
-        }
-      ]
-    },
-    {
-      "name": "Cards",
-      "cluster": 2,
       "source": "Cards",
-      "target": "Cards (cards2)",
-      "key": "cards2",
+      "target": "Cards (cards1)",
+      "key": "cards1",
       "instances": [
         {
           "url": "https://freight.qantas.com/au-en/freight-terminals.html",
           "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-          "uuid": "32e1fa98-16-ec3a018b5bf019666a491834077c227cb6f67689",
+          "uuid": "32e1fa98-13-ec3a018b5bf019666a491834077c227cb6f67689",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[5]/div[1]/div[1]/div[1]/ul[1]",
-          "section": "section-3"
+          "section": "section-2"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-67-bf19c3444a4e92e600ca68cb321627b679f5c58d",
+          "uuid": "fad9263d-64-bf19c3444a4e92e600ca68cb321627b679f5c58d",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[16]/div[1]/div[1]/div[1]/ul[1]",
-          "section": "section-3"
-        }
-      ]
-    },
-    {
-      "name": "Columns",
-      "cluster": 3,
-      "source": "Columns",
-      "target": "Columns (columns3)",
-      "key": "columns3",
-      "instances": [
-        {
-          "url": "https://freight.qantas.com/au-en/freight-terminals.html",
-          "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-          "uuid": "32e1fa98-17-8f8ed93bcea88cda56acbc21038d1a54226a70e2",
-          "xpath": "/html[1]/body[1]/div[4]/footer[1]/div[1]",
-          "section": "section-4"
-        },
-        {
-          "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
-          "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-68-8f8ed93bcea88cda56acbc21038d1a54226a70e2",
-          "xpath": "/html[1]/body[1]/div[4]/footer[1]/div[1]",
-          "section": "section-4"
-        }
-      ]
-    },
-    {
-      "name": "Accordion",
-      "cluster": 4,
-      "key": "accordion4",
-      "instances": [
-        {
-          "url": "https://freight.qantas.com/au-en/freight-terminals.html",
-          "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-          "uuid": "32e1fa98-14-2d2117d6bc6b39f031b1aff6b48b8782f11946d8",
-          "xpath": "/html[1]/body[1]/main[1]/div[3]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]",
-          "section": "section-3"
-        }
-      ]
-    },
-    {
-      "name": "Cards",
-      "cluster": 5,
-      "source": "Cards",
-      "target": "Cards (cards5)",
-      "key": "cards5",
-      "instances": [
-        {
-          "url": "https://freight.qantas.com/au-en/freight-terminals.html",
-          "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-          "uuid": "32e1fa98-10-bc6e993c46d4ed4ef26a85ce6c13de801d14d440",
-          "xpath": "/html[1]/body[1]/main[1]/div[3]/div[2]/div[1]/div[1]/div[3]"
-        }
-      ]
-    },
-    {
-      "name": "Tabs",
-      "cluster": 6,
-      "source": "Tabs",
-      "target": "Tabs (tabs6)",
-      "key": "tabs6",
-      "instances": [
-        {
-          "url": "https://freight.qantas.com/au-en/freight-terminals.html",
-          "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-          "uuid": "32e1fa98-02-0ea0ae5ba1245dfb496167ef99f1633fc53b06ae",
-          "xpath": "/html[1]/body[1]/nav[1]",
-          "section": "section-2"
-        },
-        {
-          "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
-          "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-02-0ea0ae5ba1245dfb496167ef99f1633fc53b06ae",
-          "xpath": "/html[1]/body[1]/nav[1]",
           "section": "section-2"
         }
       ]
     },
     {
-      "name": "Table (bordered)",
-      "cluster": 7,
-      "key": "tableBordered7",
+      "name": "Table (striped & bordered)",
+      "cluster": 2,
+      "key": "tableStripedBordered2",
       "instances": [
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-08-bc6e993c46d4ed4ef26a85ce6c13de801d14d440",
+          "uuid": "fad9263d-05-bc6e993c46d4ed4ef26a85ce6c13de801d14d440",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[2]/div[1]/div[1]/div[3]"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-12-588e71665254b81079ee4401c7f138342fa84c9d",
+          "uuid": "fad9263d-09-588e71665254b81079ee4401c7f138342fa84c9d",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[3]/div[1]/div[1]/div[4]"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-16-dc4ce988da090047dba679602c3c109e604d1787",
+          "uuid": "fad9263d-13-dc4ce988da090047dba679602c3c109e604d1787",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[4]/div[1]/div[1]/div[4]"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-20-cf1d87c2f97357ba8d82fedc985cccebca821a71",
+          "uuid": "fad9263d-17-cf1d87c2f97357ba8d82fedc985cccebca821a71",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[5]/div[1]/div[1]/div[3]"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-23-4b301b98fda9053d597731f0b8e31d4560f0bc1f",
+          "uuid": "fad9263d-20-4b301b98fda9053d597731f0b8e31d4560f0bc1f",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[6]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-26-ec1b4c562184dcdde577ead489e2759728884143",
+          "uuid": "fad9263d-23-ec1b4c562184dcdde577ead489e2759728884143",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[6]/div[1]/div[1]/div[4]"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-30-8b3f38393cae6b386899ccd6a72ab08fc1e3f1a1",
+          "uuid": "fad9263d-27-8b3f38393cae6b386899ccd6a72ab08fc1e3f1a1",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[8]/div[1]/div[1]/div[3]"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-34-2ab291611e20f1685d44f180649c313be0171e43",
+          "uuid": "fad9263d-31-2ab291611e20f1685d44f180649c313be0171e43",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[10]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-38-0ddb0aeca20cc5765ff2c48a4a295089303e33a4",
+          "uuid": "fad9263d-35-0ddb0aeca20cc5765ff2c48a4a295089303e33a4",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[10]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-42-180c052d5ce43463f98e2e4f2f6e0073c38ef5e8",
+          "uuid": "fad9263d-39-180c052d5ce43463f98e2e4f2f6e0073c38ef5e8",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[10]/div[1]/div[1]/div[5]"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-45-386aa48ecbbe12c52128220f84670e48ae9e8a95",
+          "uuid": "fad9263d-42-386aa48ecbbe12c52128220f84670e48ae9e8a95",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[10]/div[1]/div[1]/div[8]"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-48-4c328efc2f51b3990d2828b71244d01bc7d5454e",
+          "uuid": "fad9263d-45-4c328efc2f51b3990d2828b71244d01bc7d5454e",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[11]/div[1]/div[1]/div[3]"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-52-ddedd87b75340bea3e62d89e3d0e8d57b686a8b0",
+          "uuid": "fad9263d-49-ddedd87b75340bea3e62d89e3d0e8d57b686a8b0",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[12]/div[1]/div[1]/div[3]"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-56-dedb573a8699678330ae063710411da75e9894c8",
+          "uuid": "fad9263d-53-dedb573a8699678330ae063710411da75e9894c8",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[13]/div[1]/div[1]/div[3]"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-60-e3e9d9374c15533b0e0046891b10c4eda4d49eb6",
+          "uuid": "fad9263d-57-e3e9d9374c15533b0e0046891b10c4eda4d49eb6",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[14]/div[1]/div[1]/div[3]"
         },
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-64-9d199cacdfef7723818d9413119fa306ccae0be1",
+          "uuid": "fad9263d-61-9d199cacdfef7723818d9413119fa306ccae0be1",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[15]/div[1]/div[1]/div[3]"
         }
       ]
     },
     {
-      "name": "Columns",
-      "cluster": 8,
-      "source": "Columns",
-      "target": "Columns (columns8)",
-      "key": "columns8",
-      "instances": [
-        {
-          "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
-          "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-05-58ba820679040862b94ffd9804d9204b6c03e429",
-          "xpath": "/html[1]/body[1]/main[1]/div[3]/div[1]"
-        }
-      ]
-    },
-    {
-      "name": "Hero",
-      "cluster": 9,
-      "source": "Hero",
-      "target": "Hero (hero9)",
-      "key": "hero9",
-      "instances": [
-        {
-          "url": "https://freight.qantas.com/au-en/freight-terminals.html",
-          "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-          "uuid": "32e1fa98-04-0e656e90ffa9b526f8ce51ba23e08542406d6fcc",
-          "xpath": "/html[1]/body[1]/main[1]/div[1]"
-        }
-      ]
-    },
-    {
       "name": "Cards",
-      "cluster": 10,
+      "cluster": 3,
       "source": "Cards",
-      "target": "Cards (cards10)",
-      "key": "cards10",
+      "target": "Cards (cards3)",
+      "key": "cards3",
       "instances": [
         {
           "url": "https://freight.qantas.com/au-en/freight-terminals.html",
           "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-          "uuid": "32e1fa98-09-04b7aa2838994197c573d784d5f612e219325dd2",
+          "uuid": "32e1fa98-06-04b7aa2838994197c573d784d5f612e219325dd2",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[2]/div[1]/div[1]/div[2]"
         }
       ]
     },
     {
+      "name": "Cards",
+      "cluster": 4,
+      "source": "Cards",
+      "target": "Cards (cards4)",
+      "key": "cards4",
+      "instances": [
+        {
+          "url": "https://freight.qantas.com/au-en/freight-terminals.html",
+          "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
+          "uuid": "32e1fa98-07-bc6e993c46d4ed4ef26a85ce6c13de801d14d440",
+          "xpath": "/html[1]/body[1]/main[1]/div[3]/div[2]/div[1]/div[1]/div[3]"
+        }
+      ]
+    },
+    {
+      "name": "Accordion",
+      "cluster": 5,
+      "key": "accordion5",
+      "instances": [
+        {
+          "url": "https://freight.qantas.com/au-en/freight-terminals.html",
+          "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
+          "uuid": "32e1fa98-11-2d2117d6bc6b39f031b1aff6b48b8782f11946d8",
+          "xpath": "/html[1]/body[1]/main[1]/div[3]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]",
+          "section": "section-2"
+        }
+      ]
+    },
+    {
       "name": "Hero",
-      "cluster": 11,
+      "cluster": 6,
       "source": "Hero",
-      "target": "Hero (hero11)",
-      "key": "hero11",
+      "target": "Hero (hero6)",
+      "key": "hero6",
+      "instances": [
+        {
+          "url": "https://freight.qantas.com/au-en/freight-terminals.html",
+          "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
+          "uuid": "32e1fa98-01-0e656e90ffa9b526f8ce51ba23e08542406d6fcc",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]"
+        }
+      ]
+    },
+    {
+      "name": "Hero",
+      "cluster": 7,
+      "source": "Hero",
+      "target": "Hero (hero7)",
+      "key": "hero7",
       "instances": [
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-04-0e656e90ffa9b526f8ce51ba23e08542406d6fcc",
+          "uuid": "fad9263d-01-0e656e90ffa9b526f8ce51ba23e08542406d6fcc",
           "xpath": "/html[1]/body[1]/main[1]/div[1]"
         }
       ]
     },
     {
       "name": "Cards",
-      "cluster": 12,
+      "cluster": 8,
       "source": "Cards",
-      "target": "Cards (cards12)",
-      "key": "cards12",
+      "target": "Cards (cards8)",
+      "key": "cards8",
       "instances": [
         {
           "url": "https://freight.qantas.com/au-en/freight-terminals.html",
           "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-          "uuid": "32e1fa98-06-b9a62651cd402e0e7fd89f064b975c52019bf198",
+          "uuid": "32e1fa98-03-b9a62651cd402e0e7fd89f064b975c52019bf198",
           "xpath": "/html[1]/body[1]/main[1]/div[3]/div[1]/div[1]/div[1]/div[2]"
         }
       ]
     },
     {
       "name": "unknown",
-      "cluster": 13,
+      "cluster": 9,
       "instances": [
         {
           "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
           "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-          "uuid": "fad9263d-03-8aa164f8a69d9059ae78718716eb117f03bccd1e",
-          "xpath": "/html[1]/body[1]/nav[2]"
-        }
-      ]
-    },
-    {
-      "name": "unknown",
-      "cluster": 14,
-      "instances": [
-        {
-          "url": "https://freight.qantas.com/au-en/freight-terminals.html",
-          "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-          "uuid": "32e1fa98-03-8aa164f8a69d9059ae78718716eb117f03bccd1e",
-          "xpath": "/html[1]/body[1]/nav[2]"
+          "uuid": "fad9263d-02-58ba820679040862b94ffd9804d9204b6c03e429",
+          "xpath": "/html[1]/body[1]/main[1]/div[3]/div[1]"
         }
       ]
     }
@@ -378,71 +284,52 @@
     {
       "url": "https://freight.qantas.com/au-en/freight-terminals.html",
       "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-      "uuid": "32e1fa98-01-e149a0de7cc2c213232eb1b183df2a2d797031a7",
-      "xpath": "/html[1]/body[1]/header[1]/div[1]/div[2]/dialog[1]"
-    },
-    {
-      "url": "https://freight.qantas.com/au-en/freight-terminals.html",
-      "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-      "uuid": "32e1fa98-05-bacf0a8d8b51c4008822c3e964894902b180697e",
+      "uuid": "32e1fa98-02-bacf0a8d8b51c4008822c3e964894902b180697e",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]"
     },
     {
       "url": "https://freight.qantas.com/au-en/freight-terminals.html",
       "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-      "uuid": "32e1fa98-07-97531d1443ecce4cf8d612d25462782052a26e99",
+      "uuid": "32e1fa98-04-97531d1443ecce4cf8d612d25462782052a26e99",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[1]/div[1]/div[1]/div[3]"
     },
     {
       "url": "https://freight.qantas.com/au-en/freight-terminals.html",
       "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-      "uuid": "32e1fa98-08-fc6c6956ca42f6be49cc97adf63afab67263dd75",
+      "uuid": "32e1fa98-05-fc6c6956ca42f6be49cc97adf63afab67263dd75",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[2]/div[1]/div[1]/div[1]"
     },
     {
       "url": "https://freight.qantas.com/au-en/freight-terminals.html",
       "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-      "uuid": "32e1fa98-11-bd06d57b17f7aedf98b5ffb16335a2798758e20c",
+      "uuid": "32e1fa98-08-bd06d57b17f7aedf98b5ffb16335a2798758e20c",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[2]/div[1]/div[1]/div[4]"
     },
     {
       "url": "https://freight.qantas.com/au-en/freight-terminals.html",
       "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-      "uuid": "32e1fa98-12-aeeb45fce9dd5d81e32dc02167e4a1f6a13706a2",
+      "uuid": "32e1fa98-09-aeeb45fce9dd5d81e32dc02167e4a1f6a13706a2",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1]",
-      "section": "section-3"
-    },
-    {
-      "url": "https://freight.qantas.com/au-en/freight-terminals.html",
-      "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-      "uuid": "32e1fa98-13-0b4022fd6aee9ff3e82a111a178aaa20a882f03e",
-      "xpath": "/html[1]/body[1]/main[1]/div[3]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
-      "section": "section-3"
-    },
-    {
-      "url": "https://freight.qantas.com/au-en/freight-terminals.html",
-      "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-      "uuid": "32e1fa98-15-77bee1e761b5dd995f03f6be6fbd53c46e627ed6",
-      "xpath": "/html[1]/body[1]/main[1]/div[3]/div[5]/div[1]/div[1]/div[1]/div[1]",
-      "section": "section-3"
-    },
-    {
-      "url": "https://freight.qantas.com/au-en/freight-terminals.html",
-      "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-      "uuid": "32e1fa98-19-d4ba30a47edf3ea74181b879fc36ec344a18cfce",
-      "xpath": "/html[1]/body[1]/div[4]/footer[1]/div[3]"
-    },
-    {
-      "url": "https://freight.qantas.com/au-en/freight-terminals.html",
-      "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-      "uuid": "32e1fa98-20-7361b722a317ef18c211873ec0cff354c8c0f0e7",
-      "xpath": "/html[1]/body[1]/div[4]/footer[1]/div[4]",
       "section": "section-2"
     },
     {
       "url": "https://freight.qantas.com/au-en/freight-terminals.html",
       "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
-      "uuid": "32e1fa98-21-9e5264a09ab84dd854480c9bd403ce679794d665",
+      "uuid": "32e1fa98-10-0b4022fd6aee9ff3e82a111a178aaa20a882f03e",
+      "xpath": "/html[1]/body[1]/main[1]/div[3]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "section": "section-2"
+    },
+    {
+      "url": "https://freight.qantas.com/au-en/freight-terminals.html",
+      "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
+      "uuid": "32e1fa98-12-77bee1e761b5dd995f03f6be6fbd53c46e627ed6",
+      "xpath": "/html[1]/body[1]/main[1]/div[3]/div[5]/div[1]/div[1]/div[1]/div[1]",
+      "section": "section-2"
+    },
+    {
+      "url": "https://freight.qantas.com/au-en/freight-terminals.html",
+      "urlHash": "32e1fa984bf821433fb57f4b4806b33e7aa1d69e",
+      "uuid": "32e1fa98-14-9e5264a09ab84dd854480c9bd403ce679794d665",
       "xpath": "/html[1]/body[1]/div[7]"
     },
     {
@@ -455,297 +342,278 @@
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-01-e149a0de7cc2c213232eb1b183df2a2d797031a7",
-      "xpath": "/html[1]/body[1]/header[1]/div[1]/div[2]/dialog[1]"
-    },
-    {
-      "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
-      "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-06-fc6c6956ca42f6be49cc97adf63afab67263dd75",
+      "uuid": "fad9263d-03-fc6c6956ca42f6be49cc97adf63afab67263dd75",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[2]/div[1]/div[1]/div[1]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-07-04b7aa2838994197c573d784d5f612e219325dd2",
+      "uuid": "fad9263d-04-04b7aa2838994197c573d784d5f612e219325dd2",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[2]/div[1]/div[1]/div[2]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-09-bd06d57b17f7aedf98b5ffb16335a2798758e20c",
+      "uuid": "fad9263d-06-bd06d57b17f7aedf98b5ffb16335a2798758e20c",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[2]/div[1]/div[1]/div[4]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-10-f382d03c23c6928e63288e475c8cddca8941c11a",
+      "uuid": "fad9263d-07-f382d03c23c6928e63288e475c8cddca8941c11a",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[3]/div[1]/div[1]/div[2]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-11-7db3dacb89039f7f499d9dfe64d607c743e2fa99",
+      "uuid": "fad9263d-08-7db3dacb89039f7f499d9dfe64d607c743e2fa99",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[3]/div[1]/div[1]/div[3]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-13-5f2a2684bcf2c142aa5b081772ec587008d39dde",
+      "uuid": "fad9263d-10-5f2a2684bcf2c142aa5b081772ec587008d39dde",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[3]/div[1]/div[1]/div[5]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-14-ae071d329d7d1d76c53b3f3fa09f4bb48cff15b6",
+      "uuid": "fad9263d-11-ae071d329d7d1d76c53b3f3fa09f4bb48cff15b6",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[4]/div[1]/div[1]/div[2]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-15-1e7483974434ca9eae6d379af06cb53d3ddd96b9",
+      "uuid": "fad9263d-12-1e7483974434ca9eae6d379af06cb53d3ddd96b9",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[4]/div[1]/div[1]/div[3]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-17-a194a8a5e5ab1bbb87538867efd37caf324fa18f",
+      "uuid": "fad9263d-14-a194a8a5e5ab1bbb87538867efd37caf324fa18f",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[4]/div[1]/div[1]/div[5]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-18-313490f47af6aa8c6d08ca101e3700ff29005fce",
+      "uuid": "fad9263d-15-313490f47af6aa8c6d08ca101e3700ff29005fce",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[5]/div[1]/div[1]/div[1]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-19-6fd26bbe5d2a38cfeb77ce6e4455b03d1686e321",
+      "uuid": "fad9263d-16-6fd26bbe5d2a38cfeb77ce6e4455b03d1686e321",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[5]/div[1]/div[1]/div[2]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-21-a0b4ce4cff0e834904e55c318bf9fd8bbe82f162",
+      "uuid": "fad9263d-18-a0b4ce4cff0e834904e55c318bf9fd8bbe82f162",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[6]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-22-438cc67dfe4b705a33a2db97c770b646ef39868b",
+      "uuid": "fad9263d-19-438cc67dfe4b705a33a2db97c770b646ef39868b",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[6]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-24-c842bb3ed2f548ea67b92912f8fb2f4f0df102ee",
+      "uuid": "fad9263d-21-c842bb3ed2f548ea67b92912f8fb2f4f0df102ee",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[6]/div[1]/div[1]/div[2]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-25-9f30c8e4a8b05956b0673b0f04f3db8b17094efe",
+      "uuid": "fad9263d-22-9f30c8e4a8b05956b0673b0f04f3db8b17094efe",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[6]/div[1]/div[1]/div[3]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-27-9dc3b7a7f437130ee9748f24f7915382f4b9fd87",
+      "uuid": "fad9263d-24-9dc3b7a7f437130ee9748f24f7915382f4b9fd87",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[6]/div[1]/div[1]/div[5]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-28-2c4aca66de80e860ee4e26449043851e0d7dd9fa",
+      "uuid": "fad9263d-25-2c4aca66de80e860ee4e26449043851e0d7dd9fa",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[8]/div[1]/div[1]/div[1]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-29-7b50b0b204df47115e3e55b96890f0b4538a99f5",
+      "uuid": "fad9263d-26-7b50b0b204df47115e3e55b96890f0b4538a99f5",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[8]/div[1]/div[1]/div[2]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-31-bce6a7106dd127d93899afc3ff959fc983a05e5c",
+      "uuid": "fad9263d-28-bce6a7106dd127d93899afc3ff959fc983a05e5c",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[8]/div[1]/div[1]/div[4]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-32-a85cf45aeac8bcbfa10e30d356e06a43e7a96799",
+      "uuid": "fad9263d-29-a85cf45aeac8bcbfa10e30d356e06a43e7a96799",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[10]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-33-7d7c9cc1f0a160a9b46c8ccebe222bc5b7a9233f",
+      "uuid": "fad9263d-30-7d7c9cc1f0a160a9b46c8ccebe222bc5b7a9233f",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[10]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-35-d71c7bc35e6cbc639697fae549b2bf0ca8e63882",
+      "uuid": "fad9263d-32-d71c7bc35e6cbc639697fae549b2bf0ca8e63882",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[10]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-36-d15985b265605b133c5fb1bccb30a5daa136d780",
+      "uuid": "fad9263d-33-d15985b265605b133c5fb1bccb30a5daa136d780",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[10]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-37-8025bb3bfb4b6e70a007c62a7b5d8e717a626ea8",
+      "uuid": "fad9263d-34-8025bb3bfb4b6e70a007c62a7b5d8e717a626ea8",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[10]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-39-9a4fb3c5ecacf6e56bf53a2d7345e557f1b4a089",
+      "uuid": "fad9263d-36-9a4fb3c5ecacf6e56bf53a2d7345e557f1b4a089",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[10]/div[1]/div[1]/div[2]/div[1]/div[1]/div[4]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-40-d8c8849587e3b200971457941ba36bb4dfdb3804",
+      "uuid": "fad9263d-37-d8c8849587e3b200971457941ba36bb4dfdb3804",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[10]/div[1]/div[1]/div[3]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-41-88d251db26a7fab2c22416f01a58c82cc6412e52",
+      "uuid": "fad9263d-38-88d251db26a7fab2c22416f01a58c82cc6412e52",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[10]/div[1]/div[1]/div[4]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-43-976a04226c2e8ed829fc3a2d7a62994f0ffff4ea",
+      "uuid": "fad9263d-40-976a04226c2e8ed829fc3a2d7a62994f0ffff4ea",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[10]/div[1]/div[1]/div[6]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-44-5b401e4a39a8aaef7f9be8d69b752a098d006676",
+      "uuid": "fad9263d-41-5b401e4a39a8aaef7f9be8d69b752a098d006676",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[10]/div[1]/div[1]/div[7]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-46-7bf9fa389a3bc3bc349765e4516ee4825691281b",
+      "uuid": "fad9263d-43-7bf9fa389a3bc3bc349765e4516ee4825691281b",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[11]/div[1]/div[1]/div[1]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-47-3cd9cc365e7d42656cf1267deb1ea9ef7479f626",
+      "uuid": "fad9263d-44-3cd9cc365e7d42656cf1267deb1ea9ef7479f626",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[11]/div[1]/div[1]/div[2]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-49-304fd8224fd46c69b6dbbfc59012b392ab4d8283",
+      "uuid": "fad9263d-46-304fd8224fd46c69b6dbbfc59012b392ab4d8283",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[11]/div[1]/div[1]/div[4]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-50-bc15808cb13e8383aaac62760aae7a05cfd28c28",
+      "uuid": "fad9263d-47-bc15808cb13e8383aaac62760aae7a05cfd28c28",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[12]/div[1]/div[1]/div[1]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-51-e781fb400324846bce9467368038379deaf10bdc",
+      "uuid": "fad9263d-48-e781fb400324846bce9467368038379deaf10bdc",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[12]/div[1]/div[1]/div[2]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-53-3bdd598aff75321b2c92315e7cc203fcac48df9f",
+      "uuid": "fad9263d-50-3bdd598aff75321b2c92315e7cc203fcac48df9f",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[12]/div[1]/div[1]/div[4]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-54-e9f1cf8e8649a0f90773b1021b640c2f7e5f582e",
+      "uuid": "fad9263d-51-e9f1cf8e8649a0f90773b1021b640c2f7e5f582e",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[13]/div[1]/div[1]/div[1]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-55-aecf252e1d1f485adf6f88a67d3d17ac1222db47",
+      "uuid": "fad9263d-52-aecf252e1d1f485adf6f88a67d3d17ac1222db47",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[13]/div[1]/div[1]/div[2]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-57-ffd0f6b98997a0e54301d77b3dfa7f47c78bb032",
+      "uuid": "fad9263d-54-ffd0f6b98997a0e54301d77b3dfa7f47c78bb032",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[13]/div[1]/div[1]/div[4]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-58-1db464298f20cd665edc555eca7189368c798a90",
+      "uuid": "fad9263d-55-1db464298f20cd665edc555eca7189368c798a90",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[14]/div[1]/div[1]/div[1]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-59-d36ed022bceb8391da297f2460e96af70d176651",
+      "uuid": "fad9263d-56-d36ed022bceb8391da297f2460e96af70d176651",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[14]/div[1]/div[1]/div[2]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-61-6a3c4ae872c312714b5bb1dc7d99fea39259f678",
+      "uuid": "fad9263d-58-6a3c4ae872c312714b5bb1dc7d99fea39259f678",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[14]/div[1]/div[1]/div[4]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-62-71b786b1b28e495767b4c3449946071c20c14904",
+      "uuid": "fad9263d-59-71b786b1b28e495767b4c3449946071c20c14904",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[15]/div[1]/div[1]/div[1]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-63-007f55c731a8bd657c02b7a357dd245686beeb8f",
+      "uuid": "fad9263d-60-007f55c731a8bd657c02b7a357dd245686beeb8f",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[15]/div[1]/div[1]/div[2]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-65-137a1543ad509299086bcc33c1ee1d4e8b3b13d1",
+      "uuid": "fad9263d-62-137a1543ad509299086bcc33c1ee1d4e8b3b13d1",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[15]/div[1]/div[1]/div[4]"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-66-9339685e2db9a28b445ed73f9c26440e6a0381a0",
+      "uuid": "fad9263d-63-9339685e2db9a28b445ed73f9c26440e6a0381a0",
       "xpath": "/html[1]/body[1]/main[1]/div[3]/div[16]/div[1]/div[1]/div[1]/div[1]",
-      "section": "section-3"
-    },
-    {
-      "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
-      "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-70-d4ba30a47edf3ea74181b879fc36ec344a18cfce",
-      "xpath": "/html[1]/body[1]/div[4]/footer[1]/div[3]"
-    },
-    {
-      "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
-      "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-71-7361b722a317ef18c211873ec0cff354c8c0f0e7",
-      "xpath": "/html[1]/body[1]/div[4]/footer[1]/div[4]",
       "section": "section-2"
     },
     {
       "url": "https://freight.qantas.com/au-en/fleet/freight-fleet.html",
       "urlHash": "fad9263d1164bb90c074371ecbce70ed6036a3bc",
-      "uuid": "fad9263d-72-9e5264a09ab84dd854480c9bd403ce679794d665",
+      "uuid": "fad9263d-65-9e5264a09ab84dd854480c9bd403ce679794d665",
       "xpath": "/html[1]/body[1]/div[7]"
     }
   ],
@@ -757,18 +625,8 @@
     },
     {
       "name": "section-2",
-      "background": "rgb(50, 50, 50) none repeat scroll 0% 0% / auto padding-box border-box",
-      "count": 4
-    },
-    {
-      "name": "section-3",
       "background": "rgb(244, 245, 246) none repeat scroll 0% 0% / auto padding-box border-box",
       "count": 7
-    },
-    {
-      "name": "section-4",
-      "background": "rgb(250, 250, 250) none repeat scroll 0% 0% / auto padding-box border-box",
-      "count": 2
     }
   ]
 }
