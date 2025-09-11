@@ -11,13 +11,16 @@
  */
 /* eslint-disable no-console */
 (() => {
-   
-    try {
-
-        // remove all navigation elements (skip nav fields)
-        document.querySelectorAll('nav, [role="navigation"]').forEach((el) => el.remove());
-    
-      } catch (e) {
-        // noop
-      }
-  })();
+  try {
+    [
+      '.primary-navigation',
+      '.navigation-breadcrumb',
+      'header.header',
+      'footer.footer',
+    ].forEach((selector) => {
+      document.querySelectorAll(selector).forEach((el) => el.remove());
+    });
+  } catch (e) {
+    // noop
+  }
+})();

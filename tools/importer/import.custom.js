@@ -11,6 +11,8 @@
  * governing permissions and limitations under the License.
  */
 
+import { TransformHook } from './transformers/transform.js';
+
 /**
  * A map of custom parser names to imported parser functions.
  *
@@ -37,4 +39,17 @@ export const customElements = [];
 /**
  * Custom transformers
  */
-export const customTransformers = {};
+export const customTransformers = {
+  inject: (hookName, { document }) => {
+    if (hookName === TransformHook.beforeTransform) {
+      [
+        '.primary-navigation',
+        '.navigation-breadcrumb',
+        'header.header',
+        'footer.footer',
+      ].forEach((selector) => {
+        document.querySelectorAll(selector).forEach((el) => el.remove());
+      });
+    }
+  },
+};
